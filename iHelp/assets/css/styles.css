@@ -1,0 +1,23 @@
+body{
+  font-family: Arial, sans-serif;
+  background-color: #89e78f;  
+  background-image: url(../images/base-cesped.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; 
+  height: 100vh !important ;
+  font-weight: 700;
+}
+.p1{
+  border: 2px solid green;
+  margin: 3px;
+  text-align: center;
+}
+.p2{
+  border: 2px solid green;
+  text-align: center;
+}
+.funcionamiento{
+  border: 2px solid green;
+  margin: 3px;
+}

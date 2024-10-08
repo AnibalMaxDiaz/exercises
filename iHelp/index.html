@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="icon" type="imgage.img" href="./assets/images/favicon/favicon_cyborgW-16x16.png">
+    <title>IHelp!</title>
+</head>
+<body>
+    <div class="container">
+
+        <header>
+            <nav>
+                <h1 class="title">IHelp!</h1>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Comunidad</a></li>
+                    <li><a href="./info.html">Info</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            
+            <section class="info">
+                <h2>Bienvenido a IHelp!</h2>
+                <p>Realice un seguimiento de su huella de carbono forma rápida y sencilla.</p>
+            </section>
+        </main>    
+    
+        <form action="/submit" method="post">
+            <div class="imagen">
+                <img src="./assets/images/PlanetaSafe.png" alt="Planet" width="180px">                
+            </div>
+            <div class="formulario">
+                <label for="pregunta1">Mis Transportes:</label>
+                <input type="text" id="pregunta1" name="pregunta1" required><br><br>
+        
+                <label for="pregunta2">Mis Habitos Alimenticios:</label>
+                <input type="text" id="pregunta2" name="pregunta2" required><br><br>
+        
+                <label for="pregunta3">Mis Desperdicios:</label>
+                <input type="text" id="pregunta3" name="pregunta3" required><br><br>
+        
+                <label for="pregunta4">Mi Consumo de Energía:</label>
+                <input type="text" id="pregunta4" name="pregunta4" required><br><br>
+        
+                <button type="submit">Calcular</button>
+            </div>
+        </form>
+        <footer>
+            <button class="b1">Historico</button>
+            <button class="b2">Comparación</button>
+            <button class="b3">Recomendaciones</button>
+            <button class="b4">Desafíos y Recompensas</button>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
