@@ -1,0 +1,40 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 50px 50px 0 50px; 
+  background-color: #faf9f6;
+  min-height: 95vh;
+  max-width: 100vh;
+}
+.cards{
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  margin: 30px;
+}
+/* div.cards{
+  width: 90vw;
+} */
+.logo{
+  width: 200px;
+}
+h1 {
+  font-size: 2rem;
+}
+h1 span{
+  color: blue;
+}
+img{
+  width: 300px;
+  margin-right: 50px;
+  float: left;
+}
+
+.card{
+  width: 80%;
+}
+
+footer{
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
