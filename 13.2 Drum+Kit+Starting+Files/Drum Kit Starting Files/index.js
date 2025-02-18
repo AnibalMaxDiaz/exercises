@@ -29,7 +29,7 @@
 
 var buttons = document.querySelectorAll(".drum");
 for (let i = 0; i < buttons.length; i++) {
-  // this.addEventListener("click", function(){ .... ¨No seria equivalente a la linea 33 de abajo? y a pesar de eso no funciona..... preguntar
+  // this es la entidad que se asocia a el evento addEventListener
   document.querySelectorAll(".drum")[i].addEventListener("click", function(){ 
   switch(this.innerHTML) {
     case "w":
