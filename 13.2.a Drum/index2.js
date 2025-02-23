@@ -1,3 +1,5 @@
+// Drum Exercise
+
 // index2.js is the better implementation to this exercise becouse it uses just 1 function to compare the letters of the click and the keyboard letter pressed!
 
 //add the addeventlistener to the keydown and attach it to the event
