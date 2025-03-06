@@ -3,11 +3,22 @@
 // index2.js is the better implementation to this exercise becouse it uses just 1 function to compare the letters of the click and the keyboard letter pressed!
 
 //add the addeventlistener to the keydown and attach it to the event
-
+let inputSequence = '';
 document.addEventListener("keydown", (event)=>{
+  inputSequence += event.key;
   var letter = event.key;
   console.log(letter);
   recognizeLetter(letter);
+  if (inputSequence.includes('max')) {
+        alert('¡Has escrito la palabra "max"!');
+        inputSequence = ''; // Reinicia la secuencia para detectar la próxima vez que se escriba "max"
+    }
+
+    // Limita la longitud de inputSequence para evitar que se vuelva demasiado grande
+    if (inputSequence.length > 3) {
+        inputSequence = inputSequence.substring(inputSequence.length - 3);
+    }
+  // secretWord(letter);
 })
 
 // add the listener to every button and attach to the unnamed function whos attached to the recognizeLetter function at the same time
@@ -21,8 +32,6 @@ for (let i = 0; i < buttons.length; i++) {
   })
   
 }
-
-//function that compares the letters to each case
 
 function recognizeLetter(x) {
   switch (x) {
