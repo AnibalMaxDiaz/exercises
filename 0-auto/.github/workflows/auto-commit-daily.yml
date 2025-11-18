@@ -1,0 +1,43 @@
+name: Daily file commit
+
+on:
+  schedule:
+    - cron: "0 14 * * *"  # Diario a las 9:00 AM en Bogotá (UTC-5)
+  workflow_dispatch:       # Permite ejecutarlo manualmente
+
+permissions:
+  contents: write
+
+jobs:
+  daily-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Preparar variables de fecha
+        id: dates
+        run: |
+          TODAY=$(date +"%Y-%m-%d")
+          echo "today=$TODAY" >> $GITHUB_OUTPUT
+          echo "folder=logs" >> $GITHUB_OUTPUT
+
+      - name: Generar archivo diario
+        run: |
+          mkdir -p "${{ steps.dates.outputs.folder }}"
+          FILE="${{ steps.dates.outputs.folder }}/log-${{ steps.dates.outputs.today }}.txt"
+          echo "Fecha: ${{ steps.dates.outputs.today }}" > "$FILE"
+          echo "Actualizado automáticamente por GitHub Actions." >> "$FILE"
+          echo "Timestamp: $(date -Iseconds) (UTC)" >> "$FILE"
+
+      - name: Commit y push si hubo cambios
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No hay cambios para commitear hoy."
+          else
+            git commit -m "Archivo diario: log-${{ steps.dates.outputs.today }}.txt"
+            git push
+          fi
